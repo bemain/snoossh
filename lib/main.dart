@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snoossh/background.dart';
+import 'package:snoossh/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,11 +15,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }

@@ -9,8 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  record: ^5.2.0
-  workmanager: ^0.5.2
+  material_symbols_icons: ^4.2815.1
+  permission_handler: ^12.0.0+1
+  record: ^6.0.0
+  workmanager: ^0.6.0
 
 dev_dependencies:
   flutter_test:
