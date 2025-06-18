@@ -33,7 +33,7 @@ void _callbackDispatcher() {
     try {
       switch (task) {
         case Background.recorderTask:
-          await Recorder.recordAndVibrate();
+          await Recorder().recordAndVibrate();
           break;
       }
     } catch (e) {

@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: Recorder.hasPermission,
+      future: Recorder().hasPermission,
       builder: (context, snapshot) {
         if (!snapshot.hasData) {
           // Loading
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
 
         return Scaffold(
           body: Center(
-            child: Text("Permission given"),
+            child: Text("Permission granted"),
           ),
         );
       },
