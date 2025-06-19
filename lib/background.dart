@@ -1,4 +1,5 @@
 import 'package:flutter/foundation.dart';
+import 'package:snoossh/persistent_value.dart';
 import 'package:snoossh/recorder.dart';
 import 'package:workmanager/workmanager.dart';
 
@@ -28,7 +29,8 @@ class Background {
 @pragma('vm:entry-point')
 void _callbackDispatcher() {
   Workmanager().executeTask((task, inputData) async {
-    print("[DEBUG] Native called background task: $task");
+    debugPrint("[BACKGROUND] Native called background task: $task");
+    await PersistentValue.initialize();
 
     try {
       switch (task) {

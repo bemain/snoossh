@@ -42,8 +42,44 @@ class _HomePageState extends State<HomePage> {
         }
 
         return Scaffold(
-          body: Center(
-            child: Text("Permission granted"),
+          appBar: AppBar(
+            title: const Text("Snoossh"),
+          ),
+          body: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Text("Threshold"),
+                ValueListenableBuilder(
+                  valueListenable: Recorder().thresholdNotifier,
+                  builder: (context, threshold, child) {
+                    return Slider(
+                      value: threshold,
+                      min: -50,
+                      max: 0,
+                      onChanged: (value) {
+                        Recorder().threshold = value;
+                      },
+                    );
+                  },
+                ),
+                Text("Vibration amplitude"),
+                ValueListenableBuilder(
+                  valueListenable: Recorder().vibrationAmplitudeNotifier,
+                  builder: (context, amplitude, child) {
+                    return Slider(
+                      value: amplitude.toDouble(),
+                      min: 1,
+                      max: 255,
+                      divisions: 10,
+                      onChanged: (value) {
+                        Recorder().vibrationAmplitude = value.toInt();
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         );
       },
