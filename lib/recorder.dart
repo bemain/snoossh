@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:permission_handler/permission_handler.dart';
 import 'package:record/record.dart';
+import 'package:vibration/vibration.dart';
 
 /// Helper class for recording audio.
 class Recorder {
@@ -29,7 +30,7 @@ class Recorder {
         final Amplitude amplitude = await recorder.getAmplitude();
 
         if (amplitude.current > threshold) {
-          // TODO: Vibrate
+          Vibration.vibrate(duration: 200);
           print("[DEBUG] Vibrate");
         }
       },

@@ -45,4 +45,6 @@
 
     <!-- Required by the package 'record' -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Required to use HapticFeedback -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
 </manifest>

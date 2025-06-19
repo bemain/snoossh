@@ -4,7 +4,7 @@ import 'package:workmanager/workmanager.dart';
 
 /// Helper class for scheduling background tasks.
 class Background {
-  static const String recorderTask = "recorderTask";
+  static const String recorderTask = "se.agardh.snoossh.recorderTask";
 
   /// Initializes the background task scheduler.
   static void initialize() {
@@ -16,7 +16,7 @@ class Background {
       initialDelay: const Duration(seconds: 5),
     );
     Workmanager().registerPeriodicTask(
-      "recorder-task",
+      recorderTask,
       recorderTask,
       initialDelay: const Duration(seconds: 5),
       frequency: const Duration(minutes: 15),
